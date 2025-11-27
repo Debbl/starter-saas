@@ -1,7 +1,3 @@
-packages:
-  - apps/*
-  - packages/*
-
 catalog:
   '@lingui/cli': ^5.4.1
   '@lingui/core': ^5.4.1
