@@ -16,6 +16,10 @@
     "dev": "next dev --webpack",
     "i18n:extract": "lingui extract",
     "build": "next build --webpack",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start --webpack",
     "typecheck": "next typegen && tsc --noEmit",
@@ -26,6 +30,7 @@
     "@debbl/ahooks": "^0.4.1",
     "@lingui/core": "^5.6.1",
     "@lingui/react": "^5.6.1",
+    "@opennextjs/cloudflare": "^1.14.3",
     "@orpc/client": "^1.12.2",
     "@orpc/server": "^1.12.2",
     "@orpc/tanstack-query": "^1.12.2",
@@ -67,7 +72,8 @@
     "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
-    "unplugin-auto-import": "^20.3.0"
+    "unplugin-auto-import": "^20.3.0",
+    "wrangler": "^4.52.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

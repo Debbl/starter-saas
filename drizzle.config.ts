@@ -4,7 +4,10 @@ import { env } from '~/env'
 export default defineConfig({
   schema: './src/db/schema/index.ts',
   dialect: 'sqlite',
+  driver: 'd1-http',
   dbCredentials: {
-    url: env.DB_FILE_NAME,
+    accountId: env.CLOUDFLARE_ACCOUNT_ID,
+    databaseId: env.CLOUDFLARE_DATABASE_ID,
+    token: env.CLOUDFLARE_D1_TOKEN,
   },
 })

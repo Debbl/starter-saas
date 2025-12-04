@@ -6,9 +6,9 @@ const isDev = true
 
 export const env = createEnv({
   server: {
-    DB_FILE_NAME: z.string(),
-    GITHUB_CLIENT_ID: z.string(),
-    GITHUB_CLIENT_SECRET: z.string(),
+    CLOUDFLARE_ACCOUNT_ID: z.string(),
+    CLOUDFLARE_DATABASE_ID: z.string(),
+    CLOUDFLARE_D1_TOKEN: z.string(),
   },
   runtimeEnv: (() => {
     return process?.env ?? {}

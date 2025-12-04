@@ -1,13 +1,17 @@
-import Database from 'better-sqlite3'
-import { drizzle } from 'drizzle-orm/better-sqlite3'
+import { getCloudflareContext } from '@opennextjs/cloudflare'
+import { drizzle } from 'drizzle-orm/d1'
 import { cache } from 'react'
-import { env } from '~/env'
 import * as schema from './schema'
 
 export const getDB = cache(() => {
-  const client = new Database(env.DB_FILE_NAME, {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    nativeBinding: require('better-sqlite3/build/Release/better_sqlite3.node'),
-  })
-  return drizzle({ client, schema })
+  const { env } = getCloudflareContext()
+
+  return drizzle(env.D1, { schema })
+})
+
+// This is the one to use for static routes (i.e. ISR/SSG)
+export const getDbAsync = cache(async () => {
+  const { env } = await getCloudflareContext({ async: true })
+
+  return drizzle(env.D1, { schema })
 })

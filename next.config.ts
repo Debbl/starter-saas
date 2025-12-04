@@ -1,7 +1,10 @@
 import bundleAnalyzer from '@next/bundle-analyzer'
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
 import withSerwistInit from '@serwist/next'
 import AutoImport from 'unplugin-auto-import/webpack'
 import type { NextConfig } from 'next'
+
+initOpenNextCloudflareForDev()
 
 const withBundleAnalyzer = bundleAnalyzer({
   // eslint-disable-next-line n/prefer-global/process

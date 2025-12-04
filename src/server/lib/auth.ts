@@ -2,18 +2,11 @@ import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 // import Database from 'better-sqlite3'
 import { cache } from 'react'
-import { env } from '~/env'
 import { getDB } from '~/server/db'
 
 const betterAuthConfig: Parameters<typeof betterAuth>[0] = {
   emailAndPassword: {
     enabled: true,
-  },
-  socialProviders: {
-    github: {
-      clientId: env.GITHUB_CLIENT_ID,
-      clientSecret: env.GITHUB_CLIENT_SECRET,
-    },
   },
 }
 
