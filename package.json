@@ -34,6 +34,7 @@
     "@orpc/client": "^1.12.2",
     "@orpc/server": "^1.12.2",
     "@orpc/tanstack-query": "^1.12.2",
+    "@radix-ui/react-slot": "^1.2.4",
     "@serwist/next": "^9.2.3",
     "@t3-oss/env-core": "^0.13.8",
     "@tanstack/react-query": "^5.90.12",

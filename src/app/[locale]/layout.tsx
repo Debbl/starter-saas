@@ -1,3 +1,4 @@
+import { Noto_Sans, Noto_Sans_Mono, Noto_Serif } from 'next/font/google'
 import { linguiConfig } from '~/i18n/config'
 import { Providers } from '~/providers'
 import type { Metadata } from 'next'
@@ -44,6 +45,24 @@ export const metadata: Metadata = {
   },
 }
 
+const fontNotoSans = Noto_Sans({
+  subsets: ['latin'],
+  variable: '--font-noto-sans',
+  weight: ['500', '600', '700'],
+})
+
+const fontNotoSansMono = Noto_Sans_Mono({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-noto-sans-mono',
+})
+
+const fontNotoSerif = Noto_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-noto-serif',
+})
+
 export default async function Layout({
   children,
   params,
@@ -51,7 +70,15 @@ export default async function Layout({
   const { locale } = (await params) as { locale: SupportedLocale }
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={cn(
+        fontNotoSans.variable,
+        fontNotoSansMono.variable,
+        fontNotoSerif.variable,
+      )}
+      suppressHydrationWarning
+    >
       <body>
         <Providers locale={locale}>{children}</Providers>
       </body>
