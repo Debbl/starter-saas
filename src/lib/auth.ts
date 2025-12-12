@@ -2,7 +2,7 @@ import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 // import Database from 'better-sqlite3'
 import { cache } from 'react'
-import { getDB } from '~/server/db'
+import { getDB } from '~/db'
 
 const betterAuthConfig: Parameters<typeof betterAuth>[0] = {
   emailAndPassword: {

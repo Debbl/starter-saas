@@ -5,7 +5,7 @@ import { getLang } from '~/i18n/helper'
 import { X_NEXT_LOCALE } from '~/shared'
 import { isBrowser } from './is-browser'
 import type { RouterClient } from '@orpc/server'
-import type { Router } from '~/server/router'
+import type { Router } from '~/server/routes'
 
 const baseUrl = isBrowser ? window.location.origin : 'http://localhost:3000'
 
